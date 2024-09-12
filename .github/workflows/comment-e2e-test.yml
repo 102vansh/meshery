@@ -48,7 +48,7 @@ jobs:
             const fs = require('fs')
             const PRNumber = Number(fs.readFileSync('./pr/number'))
             const E2ETestReporter = String(fs.readFileSync('./ui/test-report.md'))
-            const skippedMatch = rawTestReport.match(/(\d+) skipped/)
+            const skippedMatch = E2ETestReporter.match(/(\d+) skipped/)
             const skipped = skippedMatch ? skippedMatch[1] : '0'
             let formattedComment = `## END-TO-END TESTS\n\n`
             formattedComment += `* ⏩ ${skipped} skipped\n\n`
